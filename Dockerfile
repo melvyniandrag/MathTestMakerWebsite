@@ -1,7 +1,8 @@
 FROM ubuntu
 
-WORKDIR /root/MathTestMakerWebsite
-ADD . /root/MathTestMakerWebsite
+RUN mkdir -p /home/teacher/MathTestMakerWebsite
+WORKDIR /home/teacher/MathTestMakerWebsite
+ADD . /home/teacher/MathTestMakerWebsite
 
 # apt installs
 RUN apt-get -y update
@@ -17,13 +18,11 @@ RUN pip3 install Django==2.1.1
 
 # server config
 
-## Apache config
-#RUN mv apache.conf /etc/apache2/sites-available/000-default.conf
-#RUN chmod 755 /root/MathTestMakerWebsite
-#RUN chown -R :www-data /root/MathTestMakerWebsite
-#RUN chgrp -R :www-data /root/MathTestMakerWebsite
-#
-## startup command
-#CMD a2enmod ssl && service apache2 start && /bin/bash
+# Apache config
+RUN mv 000-default.conf /etc/apache2/sites-available/000-default.conf
+RUN chmod 664 /home/teacher/MathTestMakerWebsite/MathTestMaker/db.sqlite3
+RUN chown :www-data /home/teacher/MathTestMakerWebsite/MathTestMaker/db.sqlite3
+RUN chown -R :www-data /home/teacher/MathTestMakerWebsite/MathTestMaker
 
-CMD /bin/bash
+# startup command
+CMD a2enmod ssl && service apache2 start && /bin/bash
