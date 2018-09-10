@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     "165.227.180.14",
+    "mathtestmaker.com",
+    "www.mathtestmaker.com",
 ]
 
 
@@ -39,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'MainApp.apps.MainappConfig',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,4 @@
+Here's where I learned how to setup letsencrypt on ubuntu:
+https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-16-04
+
+I do that locally, mount the local volume in the docker container, and set up the apache conf files in the docker container to use the certs in the mounted volume.
