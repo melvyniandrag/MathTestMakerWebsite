@@ -3,4 +3,12 @@
 {% block body %}
 <h1> Hello World! </h1>
 
+<h2>Buy for $1.00</h2>
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key=""
+    data-description="A Django Charge"
+    data-amount="100"
+    data-locale="auto">
+</script>
+
 {% endblock %}
