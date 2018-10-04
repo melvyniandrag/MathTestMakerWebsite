@@ -15,6 +15,7 @@ RUN pip3 install psycopg2-binary
 RUN pip3 install python-dateutil
 RUN pip3 install Django==2.1.1
 RUN pip3 install stripe
+RUN pip3 install djangorestframework
 
 # server config
 

@@ -1,18 +1,166 @@
 {% extends 'MainApp/base.html' %}
 
 {% block body %}
-<h1> Hello World! </h1>
+<div class="jumbotron jumbotron-fluid bg-success text-center">
+    <div class="container">
+        <h1 class="display-3 font-weight-bold"> Math Test Maker</h1>
+        <h2 class="display-4 font-weight-italic"> Fast. Free. Fancy. </h2>
+    </div>
+</div>
 
-<h2>Buy for $1.00</h2>
+<div class="container">
+    
+    <h2 class="display-5"> What Is It? </h1>
+    <a href="{% url 'MainApp:quickstartCategories' %}"> Quickstart </a>
 
-<form action="{% url 'MainApp:charge' %}" method="post">
-{% csrf_token %}
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-        data-key={{ key }}
-        data-description="A Django Charge"
-        data-amount="100"
-        data-locale="auto">
-    </script>
-</form>
+    <p class="lead"> You can make math exams here quickly. You just choose the types  of questions you want on your test, select how many unique tests you want, specify points for different problems, and then choose a pretty format for the exams. Then you click a button and we generate exams and answer sheets you can download.</p>
+    <p> The idea is, your time is valuable and making math exams is menial labor. All the teachers across the world will be asking their students the same kind of questions. Find the x intercept of this line. Reduce this fraction. Compute the derivative of this function. Why should all the teachers be spending their time thinking about how to create a test for these things? There should be a go-to source for standard tests. This way you can get back to teaching and interacting with your students faster. Have more free time. Etc. </p>
+    
+    <h2 class="display-5"> What Technology Is Used? </h1>
+    <p> Probably put some pictures in here for the diff. technologies. </p>
+    <p> This project started out as a way to experiment with a bunch of cool differnt programming tools. The site runs on a digital ocean server and is powered by Bootstrap, Docker, Django, LaTeX, Python, Javascript, Stripe, !Mathematics! and more. It uses microservices and REST APIs. It's a pretty cool project from a let-me-use-as-many-cool-tools-as-possible perspective. And this leads us to our next point. . . </p>
+ 
+    <h2 class="display-5"> How Can I Contribute? </h1>
+    <p> Are you a programmer? Are you a math teacher who wants to learn to program? Do you want to see some type of subject matter featured on this site? You can help! You can learn! This project is open to all interested parties. The project is hosted on <a href="https://github.com/melvyniandrag/MathTestMaker"> Github </a>. You can download the code that powers the site to play with it if you want. You can also write some code and contribute it! <p>
+    <ul>
+        <li>
+            <a href="#"> Links </a>
+            <a href="#"> About </a>
+            <a href="#"> Coding </a>
+            <a href="#"> And </a>
+            <a href="#"> Git </a>
+            <a href="#"> And </a>
+            <a href="#"> Related </a>
+            <a href="#"> Stuff </a>
+        </li>
+    </ul>
+    
+    <h2 class="display-5"> Can I Make a Donation? </h2>
+    <p> You sure can. The server costs a few bucks a month to host this site. And it would be pretty cool of you to support the effort! Right now this button is here just to test some eCommerce technology stuff, but if you want to actually donate, that would be super cool. Maybe put something cute in here like all the other folks do like "buy me a beer" and ask for a 3 dollar donation.</p> 
+    <form action="{% url 'MainApp:charge' %}" method="post">
+    {% csrf_token %}
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key={{ key }}
+            data-description="A Django Charge"
+            data-amount="100"
+            data-locale="auto">
+        </script>
+    </form>
+    
+    {% endblock %}
+    
+</div>
 
-{% endblock %}
+<footer class="page-footer font-small indigo">
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left">
+    <!-- Grid row -->
+    <div class="row">
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Very long link 1</a>
+          </li>
+          <li>
+            <a href="#!">Very long link 2</a>
+          </li>
+          <li>
+            <a href="#!">Very long link 3</a>
+          </li>
+          <li>
+            <a href="#!">Very long link 4</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Grid column -->
+      <hr class="clearfix w-100 d-md-none">
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2018 Copyright:
+    <a href="https://mdbootstrap.com/bootstrap-tutorial/"> MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>

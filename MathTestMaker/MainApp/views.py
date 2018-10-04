@@ -10,12 +10,28 @@ def index( request ):
     }
     return render( request, 'MainApp/index.html', context )
 
+def quickstartCategories( request ):
+    context = {}
+    return render( request, 'MainApp/quickstartCategories.html', context )
+
+def quickstartQuestions( request ):
+    context = {}
+    return render( request, 'MainApp/quickstartQuestions.html', context )
+
+def quickstartGenerate( request ):
+    context = {}
+    return render( request, 'MainApp/quickstartGenerate.html', context )
+
+def quickstartDownload( request ):
+    context = {}
+    return render( request, 'MainApp/quickstartDownload.html', context )
+
 def charge( request ):
     if request.method == 'POST':
         charge = stripe.Charge.create(
             amount=500,
             currency='usd',
-            description='A Django charge',
+            description='Thanks for Your Donation!',
             source=request.POST['stripeToken']
         )
         return render(request, 'MainApp/charge.html')
