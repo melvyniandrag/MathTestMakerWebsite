@@ -1,3 +1,16 @@
 <h1> Questions </h1>
 
-<a href="{% url 'MainApp:quickstartGenerate' %}">Go To Generate</a>
+<div>
+    <form action="{% url 'MainApp:quickstartDownload' %}" method="post">
+        {% csrf_token %}
+        <h2> Select The Questions You Want </h2>
+        {% if linear_equations %}
+            <h3>Linear Equations</h3>
+            {% for question in linear_equations %}
+                <input type="checkbox" name="linear_equations" value="{{ question }}"/>
+                <label for="linear_equations">{{ question }}</label><br/>
+            {% endfor %}
+        {% endif %}
+        <input type="submit" value="Go On To Generate Test" />
+    </form>
+<div>
