@@ -1,6 +1,7 @@
 import stripe
 from django.shortcuts import render
 from django.conf import settings
+from mathtestmaker import MathTestMaker as TestMaker
 
 stripe.api_key = settings.STRIPE_SECRET_KEY # new
 
@@ -11,7 +12,11 @@ def index( request ):
     return render( request, 'MainApp/index.html', context )
 
 def quickstartCategories( request ):
-    context = {}
+    testmaker = TestMaker()
+    categories = testmaker.getQuestionCategories()
+    context = {
+        "categories": categories,
+    }
     return render( request, 'MainApp/quickstartCategories.html', context )
 
 def quickstartQuestions( request ):

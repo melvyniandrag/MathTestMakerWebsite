@@ -1,3 +1,13 @@
 <h1> Categories </h1>
 
-<a href="{% url 'MainApp:quickstartQuestions' %}">Go To Questions </a>
+<div>
+    <form action="{% url 'MainApp:quickstartQuestions' %}" method="post">
+        {% csrf_token %}
+        <h2> Select The Question Categories You Want </h2>
+        {% for category in categories %}
+	<input type="checkbox" name="selectedCategory" value="{{ category }}"/>
+	<label for=selectedCategory">{{ category }}</label><br/>
+        {% endfor %}
+        <input type="submit" value="Go On To Select Questions" />
+    </form>
+<div>
