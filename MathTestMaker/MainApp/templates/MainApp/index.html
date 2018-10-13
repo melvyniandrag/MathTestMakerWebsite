@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-md navbar-light fixed-top py-4" id="main-nav">
   <div class="container">
     <a href="#home" class="navbar-brand">
-      <img src="{% static 'MainApp/img/mathtestmakerlogo.png' %}" height="80" alt="logo">
+      <img src="{% static 'MainApp/img/mathtestmakerlogo.png' %}" height="50" alt="logo">
     </a>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
       <span class="navbar-toggler-icon"></span>
@@ -51,13 +51,14 @@
 <section id="newsletter" class="py-1">
   <div class="container">
     <div class="row">
-      <a href="{% url 'MainApp:quickstartCategories' %}" class="btn btn-lg btn-block secondaryButton">
+	    <div class="col">
+	    <a href="{% url 'MainApp:quickstartCategories' %}" class="btn btn-lg btn-block secondaryButton">
         <i class="fas fa-rocket">
           <span style="font-size:30px">Quickstart</span>
         </i>
       </a>
+	    </div>
     </div>
-  </div>
   </div>
 </section>
 
@@ -109,8 +110,6 @@
 
       </div>
     </div>
-  </div>
-  </div>
   </div>
 </section>
 

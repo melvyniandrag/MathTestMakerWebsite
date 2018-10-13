@@ -1,14 +1,15 @@
 body {
-  margin-top: 105px; }
+  margin-top: 106px; }
 
 .navbar {
   box-shadow: 2px 2px 5px #e73e31;
   opacity: 0.9;
   background: #fff;
-  height: 120px; }
   .navbar .nav-item {
     font-size: 1.4rem;
-    padding-right: 1.4rem; }
+    padding-right: 1.4rem;
+  }
+}
 
 #showcase {
   position: relative;
