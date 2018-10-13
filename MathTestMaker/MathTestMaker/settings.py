@@ -26,6 +26,7 @@ SECRET_KEY = ')x6e$&)e@6%nxya)5wq3b3gf(ruoj0i9g3d_gc1-phz)e_3)%l'
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    "localhost",
     "165.227.180.14",
     "mathtestmaker.com",
     "www.mathtestmaker.com",

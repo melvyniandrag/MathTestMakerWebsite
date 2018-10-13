@@ -1,0 +1,67 @@
+body {
+  margin-top: 105px; }
+
+.navbar {
+  box-shadow: 2px 2px 5px #e73e31;
+  opacity: 0.9;
+  background: #fff;
+  height: 120px; }
+  .navbar .nav-item {
+    font-size: 1.4rem;
+    padding-right: 1.4rem; }
+
+#showcase {
+  position: relative;
+  background: url("../img/classroom3.jpg");
+  min-height: 600px; }
+  #showcase .primary-overlay {
+    background: rgba(191, 99, 63, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+
+.secondaryButton {
+  background: #14ac14;
+  color: #fff; }
+
+.showcaseForeground {
+  vertical-align: middle; }
+
+.mathtestmakerFooter {
+  background: #e73e31; }
+
+.mathtestmakerGreenBG {
+  background: #14ac14; }
+
+.mathtestmakerRedBG {
+  background: #e73e31; }
+
+.mathtestmakerRedBorder {
+  border: 1px #e73e31 solid; }
+
+.mathtestmakerGreenBorder {
+  border: 1px #14ac14 solid; }
+
+.info-header {
+  margin: auto;
+  width: 50%;
+  border-bottom: 1px #ddd solid; }
+
+#authors img {
+  margin-top: -50px; }
+#authors .card:hover {
+  background: #e73e31;
+  color: #fff; }
+#authors .fab {
+  color: #fff; }
+
+@media (max-width: 768px) {
+  #showcase {
+    min-height: 500px; }
+    #showcase h1 {
+      font-size: 4rem; }
+
+  .mb-resp {
+    margin-bottom: 1rem; } }
