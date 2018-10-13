@@ -1,2 +1,14 @@
+{% extends 'MainApp/base.html' %}
+
+{% block body %}
+
 <h1> Download </h1>
+
+<h2> This Stuff Needs to Go To the LaTeX Generator </h2>
+{% for question in generatedQuestions %}
+    <p> {{ question }} </p>
+{% endfor %}
+
 <a href="{% url 'MainApp:index' %}">Home</a>
+
+{% endblock %}
