@@ -1,166 +1,283 @@
 {% extends 'MainApp/base.html' %}
 
 {% block body %}
-<div class="jumbotron jumbotron-fluid bg-success text-center">
+  <nav class="navbar navbar-expand-md navbar-light fixed-top py-4" id="main-nav">
     <div class="container">
-        <h1 class="display-3 font-weight-bold"> Math Test Maker</h1>
-        <h2 class="display-4 font-weight-italic"> Fast. Free. Fancy. </h2>
+      <a href="#home" class="navbar-brand">
+        <img src="img/mathtestmakerlogo.png" height="80" alt="logo">
+      </a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="#" class="nav-link">Login</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Register</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Quickstart</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Donate</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">About</a>
+          </li>
+        </ul>
+      </div>
     </div>
-</div>
+  </nav>
 
-<div class="container">
-    
-    <h2 class="display-5"> What Is It? </h1>
-    <a href="{% url 'MainApp:quickstartCategories' %}"> Quickstart </a>
-
-    <p class="lead"> You can make math exams here quickly. You just choose the types  of questions you want on your test, select how many unique tests you want, specify points for different problems, and then choose a pretty format for the exams. Then you click a button and we generate exams and answer sheets you can download.</p>
-    <p> The idea is, your time is valuable and making math exams is menial labor. All the teachers across the world will be asking their students the same kind of questions. Find the x intercept of this line. Reduce this fraction. Compute the derivative of this function. Why should all the teachers be spending their time thinking about how to create a test for these things? There should be a go-to source for standard tests. This way you can get back to teaching and interacting with your students faster. Have more free time. Etc. </p>
-    
-    <h2 class="display-5"> What Technology Is Used? </h1>
-    <p> Probably put some pictures in here for the diff. technologies. </p>
-    <p> This project started out as a way to experiment with a bunch of cool differnt programming tools. The site runs on a digital ocean server and is powered by Bootstrap, Docker, Django, LaTeX, Python, Javascript, Stripe, !Mathematics! and more. It uses microservices and REST APIs. It's a pretty cool project from a let-me-use-as-many-cool-tools-as-possible perspective. And this leads us to our next point. . . </p>
- 
-    <h2 class="display-5"> How Can I Contribute? </h1>
-    <p> Are you a programmer? Are you a math teacher who wants to learn to program? Do you want to see some type of subject matter featured on this site? You can help! You can learn! This project is open to all interested parties. The project is hosted on <a href="https://github.com/melvyniandrag/MathTestMaker"> Github </a>. You can download the code that powers the site to play with it if you want. You can also write some code and contribute it! <p>
-    <ul>
-        <li>
-            <a href="#"> Links </a>
-            <a href="#"> About </a>
-            <a href="#"> Coding </a>
-            <a href="#"> And </a>
-            <a href="#"> Git </a>
-            <a href="#"> And </a>
-            <a href="#"> Related </a>
-            <a href="#"> Stuff </a>
-        </li>
-    </ul>
-    
-    <h2 class="display-5"> Can I Make a Donation? </h2>
-    <p> You sure can. The server costs a few bucks a month to host this site. And it would be pretty cool of you to support the effort! Right now this button is here just to test some eCommerce technology stuff, but if you want to actually donate, that would be super cool. Maybe put something cute in here like all the other folks do like "buy me a beer" and ask for a 3 dollar donation.</p> 
-    <form action="{% url 'MainApp:charge' %}" method="post">
-    {% csrf_token %}
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key={{ key }}
-            data-description="A Django Charge"
-            data-amount="100"
-            data-locale="auto">
-        </script>
-    </form>
-    
-    {% endblock %}
-    
-</div>
-
-<footer class="page-footer font-small indigo">
-  <!-- Footer Links -->
-  <div class="container text-center text-md-left">
-    <!-- Grid row -->
-    <div class="row">
-      <!-- Grid column -->
-      <div class="col-md-3 mx-auto">
-        <!-- Links -->
-        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!">Very long link 1</a>
-          </li>
-          <li>
-            <a href="#!">Very long link 2</a>
-          </li>
-          <li>
-            <a href="#!">Very long link 3</a>
-          </li>
-          <li>
-            <a href="#!">Very long link 4</a>
-          </li>
-        </ul>
+  <!-- SHOWCASE -->
+  <section id="showcase" class="my-5">
+    <div class="primary-overlay text-white">
+      <div class="container h-100">
+        <div class="row h-100">
+          <div class="col-lg-6 text-center h-100">
+            <h1 class="display-1 mt-5 pt-5">Math Exams</h1>
+            <p class="display-4">Fast. Free. Fancy.</p>
+            <a href="#" class="btn btn-outline-secondary btn-lg text-white"> <i class="fas fa-arrow-right"></i>Read More</a>
+          </div>
+          <div class="col-lg-6 text-center h-100 mt-5">
+            <img src="img/exam.png" alt="image" class="h-75 img-fluid d-none d-lg-inline-block showcaseForeground">
+          </div>
+        </div>
       </div>
-
-      <!-- Grid column -->
-      <hr class="clearfix w-100 d-md-none">
-      <!-- Grid column -->
-      <div class="col-md-3 mx-auto">
-        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-          <li>
-            <a href="#!">Link 4</a>
-          </li>
-        </ul>
-
-      </div>
-      <!-- Grid column -->
-
-      <hr class="clearfix w-100 d-md-none">
-
-      <!-- Grid column -->
-      <div class="col-md-3 mx-auto">
-
-        <!-- Links -->
-        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-          <li>
-            <a href="#!">Link 4</a>
-          </li>
-        </ul>
-
-      </div>
-      <!-- Grid column -->
-
-      <hr class="clearfix w-100 d-md-none">
-
-      <!-- Grid column -->
-      <div class="col-md-3 mx-auto">
-
-        <!-- Links -->
-        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-          <li>
-            <a href="#!">Link 4</a>
-          </li>
-        </ul>
-
-      </div>
-      <!-- Grid column -->
-
     </div>
-    <!-- Grid row -->
+  </section>
 
-  </div>
-  <!-- Footer Links -->
+  <!-- NEWSLETTER -->
+  <section id="newsletter" class="py-1">
+    <div class="container">
+      <div class="row">
+        <button class="btn btn-lg btn-block secondaryButton">
+          <i class="fas fa-rocket">
+            <span style="font-size:30px">Quickstart</span>
+          </i>
+        </button>
+      </div>
+    </div>
+    </div>
+  </section>
 
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2018 Copyright:
-    <a href="https://mdbootstrap.com/bootstrap-tutorial/"> MDBootstrap.com</a>
-  </div>
-  <!-- Copyright -->
+  <!-- BOXES -->
+  <section id="boxes" class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card text-center mathtestmakerRedBorder mb-resp">
+            <div class="card-body">
+              <h3 class="">Your Subjects</h3>
+              <p class="text-muted">mathtestmaker can generate exams for Algebra, Geometry, Calculus and beyond.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center mathtestmakerGreenBorder mb-resp">
+            <div class="card-body">
+              <h3 class="">Open Source</h3>
+              <p class="text-muted">The code is open source. Request or contribute new features on github!</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center mathtestmakerRedBorder mb-resp">
+            <div class="card-body">
+              <h3 class="">Easy to Use</h3>
+              <p class="text-muted">Just a few quick clicks of the mouse. No login required.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-</footer>
+  <!-- ABOUT / WHY -->
+  <section id="about" class="py-5 text-center mathtestmakerRedBG">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1 class="text-white pb-3 display-4">
+            What is This?
+          </h1>
+          <p class="lead pb-3"> In short, mathtestmaker is a website where teachers come, specify the type of questions they
+            want to test their students on, select an exam layout, and then generate a set of exams, each with unique questions,
+            which test the specified concepts. </p>
+          <a href="#" class="btn btn-outline-light">Tell me more</a>
+
+
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- EXPLORE SECTION -->
+  <section id="explore-section" class="bg-light text-muted py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="img/workingEarly.jpg" alt="" class="img-fluid mb-3 rounded-circle">
+        </div>
+        <div class="col-md-6">
+          <h3>You Work Hard Enough</h3>
+          <p> As it is you're waking up early, staying afterschool for meetings and thinking about tomorrow's class late
+            into the night. Save yourself some trouble with mathtestmaker. </p>
+          <div class="d-flex">
+            <div class="p-4 align-self-start">
+              <i class="fas fa-check fa-2x"></i>
+            </div>
+            <div class="p-4 align-self-start">
+              Programatically created custom math exam questions &amp; answer keys based on a few quick clicks.</div>
+          </div>
+          <div class="d-flex">
+            <div class="p-4 align-self-start">
+              <i class="fas fa-check fa-2x"></i>
+            </div>
+            <div class="p-4 align-self-start">
+              Computer generated student solution manuals detailing exactly how to solve each and every question. </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREATE-HEAD -->
+  <section id="create-head-section" class="mathtestmakerGreenBG">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center py-5">
+          <h1 class="display-4">Guaranteed to Be Correct</h1>
+          <p class="lead">No more creating questions on your own and worrying that you might compute an answer incorrectly.
+            Leave the tedium to the machine and devote your time to your other obligations.</p>
+          <a href="#" class="btn btn-outline-light">See how we do it</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREATE SECTION -->
+  <section id="create-section" class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 order-2">
+          <img src="img/test.jpg" alt="" class="img-fluid mb-3 rounded-circle">
+        </div>
+        <div class="col-md-6 order-1">
+          <h3>Good For Your Students</h3>
+          <p> The fact that the computer can quickly generate, solve, and explain as many math questions as you want is good
+            for your students.</p>
+          <div class="d-flex">
+            <div class="p-4 align-self-start">
+              <i class="fas fa-check fa-2x"></i>
+            </div>
+            <div class="p-4 align-self-start">
+              Every student can have a unique test. There's no way to cheat if everyone has a unique exam! </div>
+          </div>
+          <div class="d-flex">
+            <div class="p-4 align-self-start">
+              <i class="fas fa-check fa-2x"></i>
+            </div>
+            <div class="p-4 align-self-start">
+              The computer generates step by step solution manuals so students can thoroughly review their work if they made mistakes.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREATE-HEAD -->
+  <section id="create-head-section" class="mathtestmakerRedBG">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center py-5">
+          <h1 class="display-4">Do You Want To Program?</h1>
+          <p class="lead">The majority of the mathtestmaker code is written in Python and LaTeX. If you want to learn to
+            program with these tools - or if you know already - we'd love the help!</p>
+          <a href="#" class="btn btn-outline-light">Find out more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPLORE SECTION -->
+  <section id="explore-section" class="bg-light text-muted py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="img/examTypography.jpg" alt="" class="img-fluid mb-3 rounded-circle">
+        </div>
+        <div class="col-md-6">
+          <h3>Pretty As Can Be</h3>
+          <p> Another issue you may have is getting your tests to look nice. That's a worry of the past, since mathtestmaker
+            automatically generates beautiful PDFs through the use of the LaTeX document preparation system.</p>
+          <div class="d-flex">
+            <div class="p-4 align-self-start">
+              <i class="fas fa-check fa-2x"></i>
+            </div>
+            <div class="p-4 align-self-start">
+              No more fussing with typing equations in Microsoft Word.</div>
+          </div>
+          <div class="d-flex">
+            <div class="p-4 align-self-start">
+              <i class="fas fa-check fa-2x"></i>
+            </div>
+            <div class="p-4 align-self-start">
+              New exam styles are constantly being created so you'll always have fresh looks to choose from. </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer id="main-footer" class="py-5 mathtestmakerGreenBG">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-6 ml-auto">
+          <p class="lead">Copyright &copy; <span id="year"></span></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+
+  <script>
+    // Get the current year for the copyright
+    $('#year').text(new Date().getFullYear());
+
+    // Init Scrollspy
+    $('body').scrollspy({ target: '#main-nav' });
+
+    // Smooth Scrolling
+    $("#main-nav a").on('click', function (event) {
+      if (this.hash !== "") {
+        event.preventDefault();
+
+        const hash = this.hash;
+
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function () {
+
+          window.location.hash = hash;
+        });
+      }
+    });
+
+  </script>
+
+{% endblock %}
+
