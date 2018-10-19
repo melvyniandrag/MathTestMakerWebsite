@@ -124,6 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/home/teacher/MathTestMakerWebsite/MathTestMaker/static'
 
 STRIPE_SECRET_KEY = os.environ.get( 'STRIPE_SECRET_KEY' );
 STRIPE_PUBLISHABLE_KEY = os.environ.get( 'STRIPE_PUBLISHABLE_KEY' );

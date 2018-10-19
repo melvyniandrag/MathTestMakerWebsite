@@ -9,5 +9,6 @@ urlpatterns = [
     path( 'quickstartQuestions/', views.quickstartQuestions, name = 'quickstartQuestions' ),
     path( 'quickstartGenerate/', views.quickstartGenerate, name='quickstartGenerate' ),
     path( 'quickstartDownload/', views.quickstartDownload, name='quickstartDownload' ),
+    path( 'donate/', views.donate, name='donate' ),
     path( 'charge/', views.charge, name='charge' ),
 ]

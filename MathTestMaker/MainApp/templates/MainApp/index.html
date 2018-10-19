@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-md navbar-light fixed-top py-4" id="main-nav">
   <div class="container">
     <a href="#home" class="navbar-brand">
-      <img src="{% static 'MainApp/img/mathtestmakerlogo.png' %}" height="80" alt="logo">
+      <img src="{% static 'MainApp/img/mathtestmakerlogo.png' %}" height="50" alt="logo">
     </a>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
       <span class="navbar-toggler-icon"></span>
@@ -19,7 +19,7 @@
           <a href="{% url 'MainApp:quickstartCategories' %}" class="nav-link">Quickstart</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">Donate</a>
+          <a href="{% url 'MainApp:donate' %}" class="nav-link">Donate</a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link">About</a>

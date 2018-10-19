@@ -1,8 +1,10 @@
 FROM ubuntu
 
 RUN mkdir -p /home/teacher/MathTestMakerWebsite
+RUN mkdir -p /home/MathTestMaker
 WORKDIR /home/teacher/MathTestMakerWebsite
-ADD . /home/teacher/MathTestMakerWebsite
+ADD 000-default.conf /home/teacher/MathTestMakerWebsite
+ADD permissionScript.sh /root
 
 # apt installs
 RUN apt-get -y update
@@ -21,9 +23,7 @@ RUN pip3 install djangorestframework
 
 # Apache config
 RUN mv 000-default.conf /etc/apache2/sites-available/000-default.conf
-RUN chmod 664 /home/teacher/MathTestMakerWebsite/MathTestMaker/db.sqlite3
-RUN chown :www-data /home/teacher/MathTestMakerWebsite/MathTestMaker/db.sqlite3
-RUN chown -R :www-data /home/teacher/MathTestMakerWebsite/MathTestMaker
+RUN chmod 777 /root/permissionScript.sh
 
 # startup command
-CMD a2enmod ssl && service apache2 start && /bin/bash
+CMD /root/permissionScript.sh && a2enmod ssl && service apache2 start && /bin/bash

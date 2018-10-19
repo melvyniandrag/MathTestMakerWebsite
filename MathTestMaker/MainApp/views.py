@@ -75,3 +75,6 @@ def charge( request ):
             source=request.POST['stripeToken']
         )
         return render(request, 'MainApp/charge.html')
+
+def donate( request ):
+    return render( request, 'MainApp/donate.html')
