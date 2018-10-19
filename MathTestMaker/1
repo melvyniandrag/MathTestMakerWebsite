@@ -19,7 +19,7 @@
           <a href="{% url 'MainApp:quickstartCategories' %}" class="nav-link">Quickstart</a>
         </li>
         <li class="nav-item">
-          <a href="{% url 'MainApp:donate' %}" class="nav-link">Donate</a>
+          <a href="#" class="nav-link">Donate</a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link">About</a>
@@ -42,22 +42,20 @@
         <div class="col-lg-6 text-center h-100 mt-5">
           <img src="{% static 'MainApp/img/exam.png' %}" alt="image" class="h-75 img-fluid d-none d-lg-inline-block showcaseForeground">
         </div>
-      </div>
     </div>
   </div>
+	</div>
 </section>
 
 <!-- NEWSLETTER -->
 <section id="newsletter" class="py-1">
   <div class="container">
     <div class="row">
-	    <div class="col">
-	    <a href="{% url 'MainApp:quickstartCategories' %}" class="btn btn-lg btn-block secondaryButton">
+      <a href="{% url 'MainApp:quickstartCategories' %}" class="btn btn-lg btn-block secondaryButton">
         <i class="fas fa-rocket">
           <span style="font-size:30px">Quickstart</span>
         </i>
       </a>
-	    </div>
     </div>
   </div>
 </section>
