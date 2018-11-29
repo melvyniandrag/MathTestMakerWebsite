@@ -30,7 +30,9 @@ body {
 .secondaryButton {
   background: #14ac14;
   color: #fff; }
-
+.secondaryButton:hover {
+  color: #e73e31;
+}
 .showcaseForeground {
   vertical-align: middle; }
 
