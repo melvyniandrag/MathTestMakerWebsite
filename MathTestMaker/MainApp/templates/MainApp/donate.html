@@ -4,8 +4,8 @@
 
 <nav class="navbar navbar-expand-md navbar-light fixed-top py-4" id="main-nav">
   <div class="container">
-    <a href="#home" class="navbar-brand">
-      <img src="{% static 'MainApp/img/mathtestmakerlogo.png' %}" height="80" alt="logo">
+	  <a href="{% url 'MainApp:index' %}" class="navbar-brand">
+      <img src="{% static 'MainApp/img/mathtestmakerlogo.png' %}" height="50" alt="logo">
     </a>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
       <span class="navbar-toggler-icon"></span>
@@ -25,6 +25,9 @@
           <a href="{% url 'MainApp:donate' %}" class="nav-link active">Donate</a>
         </li>
         <li class="nav-item">
+          <a href="https://github.com/melvyniandrag/MathTestMaker" class="nav-link">Code</a>
+        </li>
+        <li class="nav-item">
           <a href="#" class="nav-link">About</a>
         </li>
       </ul>
@@ -32,20 +35,98 @@
   </div>
 </nav>
 
-<section id="showcase" class="my-5">
-  <div class="container">
+<section id="donateBody" class="py-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<h1> Help Us Cover Expenses?</h1>
+				<p class="lead">
+				Thanks for considering making a donation! The webserver running this site costs 10 bucks a month, 
+				the domain name costs 20 bucks a year, and there are other minor development costs here and there.
+				</p>
+				<p>
+				Your donation helps offset these costs, and might even help us turn a profit for our work! Below.
+				Below you will find options for paying with Stripe or with PayPal. To potential clients who
+				might need a web interface designed: notice that the site authors can implement both PayPal and 
+				Stripe into your site.
+				</p>
+			</div>
+			<div class="col-md-4">
+			        <img src="{% static 'MainApp/img/workingEarly.jpg' %}" alt="" class="img-fluid mb-3 rounded-circle">
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="donateButton" class="py-1">
+  <div class="container pb-5">
      <div class="row">
-       <div class="col">
-         <form action="{% url 'MainApp:charge' %}" method="post">
-         {% csrf_token %}
-             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                 data-key={{ key }}
-                 data-description="A Django Charge"
-                 data-amount="100"
-                 data-locale="auto">
-             </script>
-         </form>
-       </div>
+	 <div class="col-md-4">
+	   <div class="text-center mathtestmakerRedBorder borderStripe mb-resp">
+             <img src="{% static 'MainApp/img/StripeLogo.png' %}" alt="" class="mb-3" id="stripeLogo">
+	     <h3>A Nice Tip</h3>
+	     <p>Donate $1</p>
+	     <div class="mb-1">
+	       <form action="{% url 'MainApp:charge' %}" method="post">
+               {% csrf_token %}
+                   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                       data-key={{ key }}
+                       data-name="MathTestMaker"
+	               data-description="Thank You!"
+   	               data-amount="100"
+                       data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                       data-locale="auto"
+	               data-zip-code="true">
+                   </script>
+		   <input type="hidden" name="donation" value="stripe1">
+               </form>
+	     </div>
+	   </div>
+         </div>
+	 <div class="col-md-4">
+	   <div class="text-center mathtestmakerGreenBorder  borderStripe mb-resp">
+             <img src="{% static 'MainApp/img/StripeLogo.png' %}" alt="" class="mb-3" id="stripeLogo">
+	     <h3> Generous User </h3>
+	     <p>Donate $5</p>
+	     <div class="mb-1">
+	       <form action="{% url 'MainApp:charge' %}" method="post">
+               {% csrf_token %}
+                   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                       data-key={{ key }}
+                       data-name="MathTestMaker"
+	               data-description="Thank You!"
+   	               data-amount="500"
+                       data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                       data-locale="auto"
+	               data-zip-code="true">
+                   </script>
+		   <input type="hidden" name="donation" value="stripe5">
+               </form>
+	     </div>
+	   </div>
+         </div>
+	 <div class="col-md-4">
+	   <div class="text-center mathtestmakerRedBorder borderStripe mb-resp">
+             <img src="{% static 'MainApp/img/StripeLogo.png' %}" alt="" class="mb-3" id="stripeLogo">
+	     <h3> Executive Sponsor </h3>
+	     <p>Donate $100</p>
+	     <div class="mb-1">
+	       <form action="{% url 'MainApp:charge' %}" method="post">
+               {% csrf_token %}
+                   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                       data-key={{ key }}
+                       data-name="MathTestMaker"
+	               data-description="Thank You!"
+   	               data-amount="10000"
+                       data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                       data-locale="auto"
+	               data-zip-code="true">
+                   </script>
+		   <input type="hidden" name="donation" value="stripe100">
+               </form>
+	     </div>
+	   </div>
+         </div>
      </div>
    </div>
 </section>
@@ -93,4 +174,4 @@
 
 </script>
 
-{% end block %}
+{% endblock %}

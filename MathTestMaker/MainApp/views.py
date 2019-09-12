@@ -68,13 +68,38 @@ def quickstartDownload( request ):
 
 def charge( request ):
     if request.method == 'POST':
-        charge = stripe.Charge.create(
-            amount=500,
-            currency='usd',
-            description='Thanks for Your Donation!',
-            source=request.POST['stripeToken']
-        )
-        return render(request, 'MainApp/charge.html')
+        try:
+            context = {}
+            if request.POST["donation"] == "stripe1":
+                context["donation"] = "$1"
+                charge = stripe.Charge.create(
+                    amount=100,
+                    currency='usd',
+                    description='Thanks for Your Donation!',
+                    source=request.POST['stripeToken']
+                )
+            if request.POST["donation"] == "stripe5":
+                context["donation"] = "$5"
+                charge = stripe.Charge.create(
+                    amount=500,
+                    currency='usd',
+                    description='Thanks for Your Donation!',
+                    source=request.POST['stripeToken']
+                )
+            if request.POST["donation"] == "stripe100":
+                context["donation"] = "$100"
+                charge = stripe.Charge.create(
+                    amount=10000,
+                    currency='usd',
+                    description='Thanks for Your Donation!',
+                    source=request.POST['stripeToken']
+                )
+            return render(request, 'MainApp/charge.html', context)
+        except Exception as e:
+            return render( request, 'MainApp/index.html' )
 
 def donate( request ):
-    return render( request, 'MainApp/donate.html')
+    context = {
+        'key': settings.STRIPE_PUBLISHABLE_KEY,
+    }
+    return render( request, 'MainApp/donate.html', context )

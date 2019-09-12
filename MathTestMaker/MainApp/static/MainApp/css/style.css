@@ -26,6 +26,10 @@ body {
   background: #14ac14;
   color: #fff; }
 
+.secondaryButton:hover {
+	color: #000000;
+} 
+
 .showcaseForeground {
   vertical-align: middle; }
 
@@ -56,6 +60,16 @@ body {
   color: #fff; }
 #authors .fab {
   color: #fff; }
+
+.borderStripe{
+  border-radius: 15px;
+}
+
+#stripeLogo {
+    height: auto; 
+    width: auto; 
+    max-height: 50px;
+}
 
 @media (max-width: 768px) {
   #showcase {
