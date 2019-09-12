@@ -1,14 +1,15 @@
 body {
-  margin-top: 105px; }
+  margin-top: 106px; }
 
 .navbar {
   box-shadow: 2px 2px 5px #e73e31;
   opacity: 0.9;
   background: #fff;
-  }
   .navbar .nav-item {
     font-size: 1.4rem;
-    padding-right: 1.4rem; }
+    padding-right: 1.4rem;
+  }
+}
 
 #showcase {
   position: relative;
@@ -25,11 +26,9 @@ body {
 .secondaryButton {
   background: #14ac14;
   color: #fff; }
-
 .secondaryButton:hover {
-	color: #000000;
-} 
-
+  color: #e73e31;
+}
 .showcaseForeground {
   vertical-align: middle; }
 
