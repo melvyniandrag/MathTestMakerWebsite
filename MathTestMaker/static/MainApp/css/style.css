@@ -1,26 +1,15 @@
 body {
-<<<<<<< HEAD
   margin-top: 105px; }
-=======
-  margin-top: 106px; }
->>>>>>> 3651679356a562a38c8e450411317807aafe5e9b
 
 .navbar {
   box-shadow: 2px 2px 5px #e73e31;
   opacity: 0.9;
   background: #fff;
-<<<<<<< HEAD
-  }
-  .navbar .nav-item {
-    font-size: 1.4rem;
-    padding-right: 1.4rem; }
-=======
   .navbar .nav-item {
     font-size: 1.4rem;
     padding-right: 1.4rem;
   }
 }
->>>>>>> 3651679356a562a38c8e450411317807aafe5e9b
 
 #showcase {
   position: relative;
