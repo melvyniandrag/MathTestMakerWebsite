@@ -25,10 +25,10 @@ def quickstartQuestions( request ):
         testmaker = TestMaker()
         selectedCategories = request.POST.getlist( "selectedCategory" )
         context = {}
-        for category in selectedCategories:
-            generator = testmaker.questionGenerators[category]
+        for category_codename in selectedCategories:
+            generator = testmaker.questionGenerators[category_codename]
             questions = generator.getQuestionNames()
-            context[category] = questions
+            context[category_codename] = questions
         return render( request, 'MainApp/quickstartQuestions.html', context )
     else:
         return index( request )
