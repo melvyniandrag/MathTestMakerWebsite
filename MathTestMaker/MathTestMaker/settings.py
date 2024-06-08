@@ -26,6 +26,7 @@ SECRET_KEY = ')x6e$&)e@6%nxya)5wq3b3gf(ruoj0i9g3d_gc1-phz)e_3)%l'
 DEBUG = False
 
 ALLOWED_HOSTS = [
+    "*",
     "localhost",
     "165.227.180.14",
     "mathtestmaker.com",
@@ -124,7 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/mathtestmakeruser/MathTestMakerWebsite/MathTestMaker/static'
+STATIC_ROOT = '/var/www/MathTestMaker/static'
 
-STRIPE_SECRET_KEY = os.environ.get( 'STRIPE_SECRET_KEY' );
-STRIPE_PUBLISHABLE_KEY = os.environ.get( 'STRIPE_PUBLISHABLE_KEY' );
+STRIPE_SECRET_KEY = "AJGJGTGAJS" #os.environ.get( 'STRIPE_SECRET_KEY' );
+STRIPE_PUBLISHABLE_KEY = "9akjhg" #os.environ.get( 'STRIPE_PUBLISHABLE_KEY' );
