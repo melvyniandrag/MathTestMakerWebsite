@@ -16,6 +16,8 @@ COPY MathTestMakerLibrary /MathTestMakerLibrary
 
 WORKDIR /var/www/MathTestMaker
 
+RUN python3 manage.py collectstatic --noinput
+
 RUN a2enmod wsgi
 
 RUN a2dissite 000-default.conf
@@ -23,4 +25,5 @@ RUN a2dissite 000-default.conf
 RUN a2ensite mathtestmaker.com.conf
 
 EXPOSE 80
-#CMD ["apachectl", "-D", "FOREGROUND"]
+
+CMD ["apachectl", "-D", "FOREGROUND"]
